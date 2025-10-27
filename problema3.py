@@ -1,21 +1,23 @@
-def calcular_media(datos):
-    if not datos:
-        return 0
-    # Calcular la media aritmética de una lista de números
-    return sum(datos) / len(datos)
+def operar_conjuntos(lista1, lista2):
+    # Convertimos las listas en conjuntos
+    conjunto1 = set(lista1)
+    conjunto2 = set(lista2)
 
-def calcular_maximo(datos):
-    if not datos:
-        return None
-    return max(datos)
+    # Calculamos las operaciones pedidas
+    interseccion = conjunto1 & conjunto2
+    union = conjunto1 | conjunto2
+    diferencia_simetrica = conjunto1 ^ conjunto2
 
-def calcular_minimo(datos):
-    if not datos:
-        return None
-    return min(datos)
+    # Creamos el diccionario de resultados
+    resultado = {
+        "interseccion": interseccion,
+        "union": union,
+        "diferencia_simetrica": diferencia_simetrica
+    }
+
+    return resultado
 
 # Ejemplo de ejecución
-numeros = [5, 8, 2, 10, 3]
-print("Media:", calcular_media(numeros))
-print("Máximo:", calcular_maximo(numeros))
-print("Mínimo:", calcular_minimo(numeros))
+lista_a = [1, 2, 3, 4, 5]
+lista_b = [4, 5, 6, 7, 8]
+print(operar_conjuntos(lista_a, lista_b))
